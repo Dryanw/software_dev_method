@@ -2,9 +2,11 @@ import React from 'react';
 import App from './App';
 import mockData from './mockData';
 import {render, screen, waitForElementToBeRemoved} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import fetchMock from 'jest-fetch-mock';
-//
+
 beforeEach(() => {
+    fetchMock.resetMocks();
     fetchMock.once(JSON.stringify(mockData));
 });
 
